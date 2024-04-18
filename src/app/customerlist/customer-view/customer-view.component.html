@@ -1,0 +1,150 @@
+<div *ngIf="customer" class="row mt-4 bg-light rounded-5 shadow">
+  <h2 class="text-center text-success">Customer Details</h2>
+  <table class="table text-center shadow table-bordered rounded-pill table-rounded col-6 w-50">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <td>{{ customer.id }}</td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td>{{ customer.name }}</td>
+      </tr>
+      <tr>
+        <th>Username</th>
+        <td>{{ customer.username }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ customer.email }}</td>
+      </tr>
+      <tr>
+        <th>Street</th>
+        <td>{{ customer.address.street }}</td>
+      </tr>
+   
+      <tr>
+        <th>Suite</th>
+        <td>{{ customer.address.suite }}</td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td>{{ customer.address.city }}</td>
+      </tr>
+      <tr>
+        <th>Zipcode</th>
+        <td>{{ customer.address.zipcode }}</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td>{{ customer.phone }}</td>
+      </tr>
+      <tr>
+        <th>Website</th>
+        <td>{{ customer.website }}</td>
+      </tr>
+      <tr>
+        <th>Company Name</th>
+        <td>{{ customer.company.name }}</td>
+      </tr>
+      <tr>
+        <th>Company Catchphrase</th>
+        <td>{{ customer.company.catchPhrase }}</td>
+      </tr>
+      <tr>
+        <th>Company Business</th>
+        <td>{{ customer.company.bs }}</td>
+      </tr>
+    </thead>
+   
+  </table>
+  <div class="col-md-6  align-items-center my-auto col-sm-12"><img [src]="imagePath"
+      class="img-fluid shadow rounded-5 mt-auto shadow"></div>
+  <div *ngIf="!editMode">
+    <button (click)="editCustomer()" class="mb-2 mx-auto btn btn-primary">Edit</button>
+  </div>
+
+
+  <div *ngIf="editMode">
+ 
+    <form [formGroup]="customerForm" (ngSubmit)="updateCustomer()" class="w-50 mx-auto">
+
+      <h2 class="text-center text-danger m-2"> Customer Register Form</h2>
+      <div class="form-floating mb-1 mt-3">
+        <input type="text" class="form-control" id="id" placeholder="ID" formControlName="id">
+        <label for="email">ID</label>
+      </div>
+
+      <div class="form-floating mb-1">
+        <input type="text" class="form-control" id="name" placeholder="PASSWORD" formControlName="name">
+        <label for="pwd">Password</label>
+      </div>
+
+      <div class="form-floating mb-1">
+        <input type="text" class="form-control" id="username" placeholder="Enter username" formControlName="username">
+        <label for="username">Username</label>
+      </div>
+
+      <div class="form-floating mb-1">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+        <label for="email">Email</label>
+      </div>
+
+      <div formGroupName="address">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control" id="street" placeholder="Enter street" formControlName="street">
+          <label for="street">Street</label>
+        </div>
+
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control" id="suite" placeholder="Enter suite" formControlName="suite">
+          <label for="suite">Suite</label>
+        </div>
+
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control" id="city" placeholder="Enter city" formControlName="city">
+          <label for="city">City</label>
+        </div>
+
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode" formControlName="zipcode">
+          <label for="zipcode">Zipcode</label>
+        </div>
+      </div>
+
+      <div class="form-floating mb-1">
+        <input type="text" class="form-control" id="phone" placeholder="Enter phone" formControlName="phone">
+        <label for="phone">Phone</label>
+      </div>
+
+      <div class="form-floating mb-1">
+        <input type="text" class="form-control" id="website" placeholder="Enter website" formControlName="website">
+        <label for="website">Website</label>
+      </div>
+
+      <div formGroupName="company">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control" id="companyName" placeholder="Enter company name"
+            formControlName="companyName">
+          <label for="companyName">Company Name</label>
+        </div>
+
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control" id="catchPhrase" placeholder="Enter catchphrase"
+            formControlName="catchPhrase">
+          <label for="catchPhrase">Company Catchphrase</label>
+        </div>
+
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control" id="business" placeholder="Enter business" formControlName="bs">
+          <label for="business">Business</label>
+        </div>
+      </div>
+      <div class="mx-auto">
+        <button (click)="updateCustomer()" class="btn btn-success">Update</button>
+        <button (click)="cancelEdit()" class="btn btn-danger">Cancel</button>
+      </div>
+    </form>
+
+  </div>
+</div>

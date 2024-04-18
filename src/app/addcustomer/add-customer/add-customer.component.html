@@ -1,0 +1,75 @@
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()" class="w-50 mx-auto">
+  <h2 class="text-center text-danger m-2"> Customer Register Form</h2>
+  <div class="form-floating mb-3 mt-3">
+    <input type="text" class="form-control" id="id" placeholder="ID" formControlName="id">
+    <label for="email">ID</label>
+  </div>
+
+  <div class="form-floating mt-3 mb-3">
+    <input type="text" class="form-control" id="name" placeholder="PASSWORD" formControlName="name">
+    <label for="pwd">Password</label>
+  </div>
+
+  <div class="form-floating mb-3 mt-3">
+    <input type="text" class="form-control" id="username" placeholder="Enter username" formControlName="username">
+    <label for="username">Username</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+    <label for="email">Email</label>
+  </div>
+
+  <div formGroupName="address">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="street" placeholder="Enter street" formControlName="street">
+      <label for="street">Street</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="suite" placeholder="Enter suite" formControlName="suite">
+      <label for="suite">Suite</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="city" placeholder="Enter city" formControlName="city">
+      <label for="city">City</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode" formControlName="zipcode">
+      <label for="zipcode">Zipcode</label>
+    </div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="phone" placeholder="Enter phone" formControlName="phone">
+    <label for="phone">Phone</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="website" placeholder="Enter website" formControlName="website">
+    <label for="website">Website</label>
+  </div>
+
+  <div formGroupName="company">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="companyName" placeholder="Enter company name"
+        formControlName="companyName">
+      <label for="companyName">Company Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="catchPhrase" placeholder="Enter catchphrase"
+        formControlName="catchPhrase">
+      <label for="catchPhrase">Company Catchphrase</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="business" placeholder="Enter business" formControlName="bs">
+      <label for="business">Business</label>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="customerForm.invalid" class="btn btn-success">Submit</button>
+</form>

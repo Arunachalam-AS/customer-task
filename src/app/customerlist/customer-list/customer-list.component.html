@@ -1,0 +1,17 @@
+<div class="row bg-light rounded-5 shadow mt-5">
+
+  <table class="table rounded-pill table-rounded col-8 w-50">
+
+    <tbody *ngFor="let customer of customers" class="text-center">
+      <tr>
+        <th>{{ customer.name }}</th>
+        <th><a routerLink="customerview/{{customer.id}}" class="text-decoration-none text-success">viewdetails</a>
+        </th>
+        <th><button (click)="deleteCustomer(customer.id)" class="btn btn-danger">Delete</button></th>
+      </tr>
+    </tbody>
+
+  </table>
+  <div class="col-md-6  align-items-center my-auto col-sm-12"><img [src]="imagePath"
+      class="img-fluid rounded-5 mt-auto shadow"></div>
+</div>

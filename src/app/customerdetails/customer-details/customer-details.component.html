@@ -1,0 +1,16 @@
+<h2>Customer Details</h2>
+<div *ngIf="customer">
+  <p>ID: {{ customer.id }}</p>
+  <p>Name: {{ customer.name }}</p>
+  <p>Username: {{ customer.username }}</p>
+  <p>Email: {{ customer.email }}</p>
+  <p>Street: {{ customer.address.street }}</p>
+  <p>Suite: {{ customer.address.suite }}</p>
+  <p>City: {{ customer.address.city }}</p>
+  <p>Zipcode: {{ customer.address.zipcode }}</p>
+  <p>Phone: {{ customer.phone }}</p>
+  <p>Website: {{ customer.website }}</p>
+  <p>Company: {{ customer.company.name }}</p>
+  <p>Catchphrase: {{ customer.company.catchPhrase }}</p>
+  <p>Business: {{ customer.company.bs }}</p>
+</div>
